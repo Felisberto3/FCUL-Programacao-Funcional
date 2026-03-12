@@ -12,3 +12,15 @@ secondElement list = list !! 1
 beforeLast list = last (init list)
 
 beforeLast2 list = list !! (length list - 2)
+
+listElement list n = list !! (n - 1)
+
+-- rewrite
+-- beforeLast2
+
+beforeLast3 :: [c] -> c
+beforeLast3 = last . init
+
+-- secondElement
+secondElement2 :: [c] -> c
+secondElement2 = head . tail
