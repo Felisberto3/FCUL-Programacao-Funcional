@@ -1,0 +1,9 @@
+-- 5. Qual a diferença entre as seguintes funções?
+-- (a) f1 0 = 0
+--     f1 x = x - 1
+-- (b) f2 x = if x == 0 then 0 else x - 1
+-- (c) f3 x = x - 1
+--     f3 0 = 0
+-- (d) f4 x | x /= 0 = x
+--          | otherwise = 0
+-- R.: Os exercícios resolvem os meus problemas com pattern Matching diferentes, mas a c) está errado por usar o caso base na ordem errada.
