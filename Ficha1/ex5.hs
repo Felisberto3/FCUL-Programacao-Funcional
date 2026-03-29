@@ -7,13 +7,22 @@ funcaoMaiorQue10 list = length list > 10
 -- b)
 isVazio list = null list
 
+isVazio' :: [a] -> Bool
+isVazio' = null
+
 -- c)
+takeOutElement :: String -> String
 takeOutElement a = init (tail a)
 
+takeOutElement' :: [a] -> [a]
+takeOutElement' = init . tail
+
 -- d)
+secondElement :: [a] -> a
 secondElement list = list !! 1
 
 -- e)
+beforeLast :: [a] -> a
 beforeLast list = last (init list)
 
 beforeLast2 list = list !! (length list - 2)
