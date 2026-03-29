@@ -1,3 +1,5 @@
+import Data.Type.Coercion (trans)
+
 factorial 0 = 1
 factorial x = x * factorial (x - 1)
 
@@ -61,3 +63,23 @@ replicate' n x = x : replicate' (n - 1) x
 
 -- curried functions
 novaList = map (\x -> x ^ 2 + 1)
+
+map' :: (a -> a) -> [a] -> [a]
+map' _ [] = []
+map' f (x : xs) = f x : map' f xs
+
+filter' :: (a -> Bool) -> [a] -> [a]
+filter' _ [] = []
+filter' f (x : xs)
+  | f x = x : filter' f xs
+  | otherwise = filter' f xs
+
+zip' :: [a] -> [b] -> [(a, b)]
+zip' _ [] = []
+zip' [] _ = []
+zip' (x : xs) (y : ys) = (x, y) : zip' xs ys
+
+zipWith' :: (a -> a -> a) -> [a] -> [a] -> [a]
+zipWith' _ _ [] = []
+zipWith' _ [] _ = []
+zipWith' f (x : xs) (y : ys) = f x y : zipWith' f xs ys
