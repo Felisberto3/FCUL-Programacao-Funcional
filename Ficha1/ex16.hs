@@ -1,0 +1,1 @@
+list xs ys = concat [[(x, y) | y <- ys] | x <- xs]
