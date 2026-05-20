@@ -1,0 +1,10 @@
+-- arbitrary           -- gera um valor aleatório do tipo inferido
+-- choose (a, b)       -- gera um valor aleatório entre a e b (inclusive)
+-- elements [x,y,z]    -- escolhe aleatoriamente um elemento da lista
+-- listOf arbitrary    -- gera uma lista de tamanho aleatório (pode ser vazia)
+-- listOf1 arbitrary   -- gera uma lista não vazia
+-- vectorOf n arbitrary-- gera uma lista de exactamente n elementos
+-- oneof [g1, g2, g3]  -- escolhe aleatoriamente entre geradores
+-- frequency [(3,g1), (1,g2)]  -- escolhe g1 com prob 3/4, g2 com prob 1/4
+-- suchThat arbitrary p -- gera valores que satisfazem o predicado p
+-- return x            -- gerador que devolve sempre x

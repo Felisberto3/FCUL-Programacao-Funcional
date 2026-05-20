@@ -74,3 +74,7 @@ gerarCor = do
 prop_corRever :: Property
 prop_corRever =
   forAll gerarCor (\xs -> length xs >= 28)
+
+-- duvidas
+-- 1. como e onde usar o (and e or)
+-- 2. Como usar 1) no quickCheck
