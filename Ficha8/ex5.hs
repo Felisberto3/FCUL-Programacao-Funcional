@@ -4,7 +4,7 @@ guess n = do
   where
     sortear :: Int -> Int -> Int -> IO ()
     sortear i f acc = do
-      let v = i + ((f - i) `div` 2)
+      let v = i + (f - i) `div` 2
       putStr $ show v ++ "?"
       c <- getLine
       case c of
