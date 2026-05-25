@@ -2,6 +2,7 @@ import Data.List (isPrefixOf)
 import GHC.IO.Handle (hGetContents, hPutStr)
 import GHC.IO.Handle.FD (withFile)
 import GHC.IO.IOMode (IOMode (ReadMode, WriteMode))
+import System.Environment (getArgs)
 
 filterFiles :: (String -> Bool) -> FilePath -> FilePath -> IO ()
 filterFiles f path1 path2 = do
@@ -49,3 +50,13 @@ filterPrefix2 wordPattern path1 path2 = do
     )
   where
     filterTexto wordPattern w = unlines (filter (wordPattern `isPrefixOf`) $ lines w)
+
+-- c )
+filterPrefix3 :: IO ()
+filterPrefix3 = do
+  arguments <- getArgs
+  case arguments of
+    [prefix, path1, path2] -> readFile path1 >>= \contents -> writeFile path2 (texto prefix contents)
+    _ -> putStr "<ficheiro> `prefix` origin:filePath dest:filePath"
+  where
+    texto prefix contents = unlines (filter (prefix `isPrefixOf`) (lines contents))
